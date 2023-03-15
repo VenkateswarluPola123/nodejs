@@ -44,7 +44,7 @@ resource "aws_security_group" "cw_sg_ssh" {
   }
 }
 resource "aws_instance" "test-instance" {
-  ami = "ami-0fc841be1f929d7d1"
+  ami = "ami-0557a15b87f6559cf"
   instance_type = "t2.micro"
   security_groups = ["test-sg"]
 }
