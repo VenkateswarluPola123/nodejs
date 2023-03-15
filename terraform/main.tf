@@ -43,15 +43,9 @@ resource "aws_security_group" "cw_sg_ssh" {
     cidr_blocks = ["172.16.10.0/24"] #replace it with your ip address
   }
 }
-
-resource "aws_key_pair" "my_blog_key" {
-  key_name = "test_key"
-  public_key = file("./ssh-keys/test.pub")
-}
 resource "aws_instance" "test-instance" {
   ami = "ami-0fc841be1f929d7d1"
   instance_type = "t2.micro"
-  key_name = aws_key_pair.my_blog_key.key_name
   security_groups = ["test-sg"]
 }
   
